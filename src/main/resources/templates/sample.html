@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="/js/axios.min.js"></script>
+    <script type="text/javascript" src="/js/axiosFile.js"></script>
+    <script type="text/javascript" src="/js/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-ui-1.13.2.min.js"></script>
+    <script type="text/javascript" src="/js/ajaxFile.js"></script>
+</head>
+<body>
+<div>
+    <div>
+        <a href="https://blog.kakaocdn.net/dn/0mySg/btqCUccOGVk/nQ68nZiNKoIEGNJkooELF1/img.jpg" download="image.jpg">다운로드</a>
+        <button onclick="axiosDownload('https://blog.kakaocdn.net/dn/0mySg/btqCUccOGVk/nQ68nZiNKoIEGNJkooELF1/img.jpg')">axios 이미지 다운로드</button>
+    </div>
+    <div>
+        <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" download="abcd.pdf">pdf 다운로드</a>
+        <button onclick="axiosDownload('https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf')">axios pdf 다운로드</button>
+    </div>
+
+    <div>
+        <button onclick="ajaxDownload('https://blog.kakaocdn.net/dn/0mySg/btqCUccOGVk/nQ68nZiNKoIEGNJkooELF1/img.jpg')">ajax 이미지 다운로드</button>
+    </div>
+    <div>
+        <button onclick="ajaxDownload('https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf')">ajax pdf 다운로드</button>
+    </div>
+
+</div>
+
+</body>
+</html>
+
+<script>
+  const axiosDownload = function (url) {
+    axiosFile.download(url)
+  }
+
+  const ajaxDownload = function (url) {
+    ajaxFile.download(url)
+  }
+</script>
